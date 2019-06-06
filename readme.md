@@ -109,8 +109,11 @@ Now the application is set up such that the default route is to render the `TabR
 Having all of the default routing based around tabs at the route level of the application can become problematic as the application gets more complex. As you will see in the later sections when the app has to check for authenticated user and protected routes, this setup will be beneficial
 
 ### Cleanup Tab1
-There is alot of noise in `Tab1` so lets make it look like tab2, copy contents from `Tab2` into `Tab1`
+There is alot of noise in `Tab1` so lets make it look like `Tab2`, copy contents from `Tab2` into `Tab1`
 ```tsx
+
+// FILE: Tab1.tsx
+
 import React from 'react';
 import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/react';
 
@@ -130,8 +133,11 @@ const Tab1: React.SFC = () => {
 export default Tab1;
 ```
 ## Navigating to Detail Pages
-Lets just copy `Tab1.tsx` and rename it `Tab1-Detail.tsx`... clean it up so it looks like this when you are done.
+Lets just duplicate the file `Tab1.tsx` and rename it `Tab1Detail.tsx`... clean it up so it looks like this when you are done.
 ```tsx
+
+// FILE: Tab1Detail.tsx
+
 import React from 'react';
 import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/react';
 
@@ -150,8 +156,11 @@ const Tab1Detail: React.SFC = () => {
 
 export default Tab1Detail;
 ```
-Add button in the content section of `Tab1`; we will use that button to navigate to the detail page `Tab1Detail` that we just created.
+Add button in the `IonContent` section of `Tab1`; we will use that button to navigate to the detail page `Tab1Detail` that we just created.
 ```tsx
+
+// FILE: Tab.tsx
+
 <IonContent>
     <IonButton
         expand="full"
@@ -163,20 +172,29 @@ Add button in the content section of `Tab1`; we will use that button to navigate
     > NEXT PAGE</IonButton>
 </IonContent>
 ```
-So a few problems when you make this change, the first one is
->Where are the props.history coming from?
+So a few problems when you make this change in `Tab1.tsx`, the first one is
+>Where is the props.history coming from?
 
-We can use react-router `withRouter` to get the `history` object passed along as a property to the component
+We can use react-router `withRouter` to get the `history` object passed along as a property to the component since the component was being rendered by the `Router`. So lets make the following changes to the files.
 ```tsx
+
+// FILE: Tab1.tsx
+
 // add the import..
 import { withRouter } from "react-router";
 ```
 Then add parameter, and for now we will specify the type as `any`
 ```tsx
+
+// FILE: Tab1.tsx
+
 const Tab1: React.SFC<any> = (props) => {
 ```
-Finally we need to add the actual route to the `Router` element in `TabRoot`, So add the new route.
+Finally we need to add the actual route we want to navigate to `/:tab(tab1-detail)` to the `Router` element in `TabRoot`, So add the new route.
 ```tsx
+
+// FILE: TabRoot.tsx
+
 <IonRouterOutlet>
     <Route path="/:tab(tab1)" component={Tab1} />
     <Route path="/:tab(tab1-detail)" component={Tab1Detail} />
@@ -186,20 +204,26 @@ Finally we need to add the actual route to the `Router` element in `TabRoot`, So
 ```
 Now to go back, we need to first add the `IonBackButton` component to the toolbar on the `Tab1Detail` page, right above the `<IonTitle>`.
 ```tsx
+
+// FILE: Tab1Detail.tsx
+
 <IonButtons slot="start">
-<IonBackButton
-    text=""
-    defaultHref="/"
-    onClick={() => props.history.replace("/tab1")}
-    goBack={() => {}}
-/>
+  <IonBackButton
+      text=""
+      defaultHref="/"
+      onClick={() => props.history.replace("/tab1")}
+      goBack={() => {}}
+  />
 </IonButtons>
 <IonTitle>Tab One Detail</IonTitle>
 ```
->as of now, the `defaultHref` is not working so I had to respond to the `onCLick` event to get this to work.
+>Known Issue: As of now, the `defaultHref` is not working so I had to respond to the `onCLick` event to get this to work.
 
-As you can see we are using the history propery again to go back to the previouce component so we need to add the `withRouter` and properly specify the parameters for the component.
+As you can see we are using the history propery again to go back to the previous component so we need to add the `withRouter` and properly specify the parameters for the component.
 ```tsx
+
+// FILE: Tab1Detail.tsx
+
 import { withRouter } from "react-router";        // <== NEW
 
 const Tab1Detail: React.SFC<any> = (props) => {   // <== NEW
