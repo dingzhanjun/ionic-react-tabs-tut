@@ -1,6 +1,12 @@
 # Ionic React Tabs: Step By Step
 
-Working with the new ionic cli generating an app with tabs and a login page
+Working with the new ionic cli generating an app with tabs and eventually a login page
+
+Ionic & React Components used in this example:
+
+- [IonTabs Documentation](https://ionicframework.com/docs/api/tabs)
+- [IonBackButton](https://ionicframework.com/docs/api/back-button)
+- [React Router Documentation](https://reacttraining.com/react-router/web/guides/quick-start)
 
 ## Whait It Will Look Like
 <p align="center">
@@ -73,6 +79,8 @@ And `TabRoot.tsx` should look like this after pasting the code we cut from `App.
 
 >Please note I have removed the imports to save space when looking at the code. I also have reduced the number of tabs from three to two, I believe that is sufficcient to make my point.
 
+>Please note that the documentation regarding how IonTabs work in React doesnt appear to be correct
+
 ```tsx
 
 // FILE: TabRoot.tsx
@@ -88,11 +96,11 @@ const TabRoot: React.FC<IAppProps> = props => {
           <Route path="/:tab(tab2)" component={Tab2} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="schedule" href="/tab1">
+          <IonTabButton tab="tab1" href="/tab1">
             <IonIcon name="flash" />
             <IonLabel>Tab One</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="speakers" href="/tab2">
+          <IonTabButton tab="tab2" href="/tab2">
             <IonIcon name="apps" />
             <IonLabel>Tab Two</IonLabel>
           </IonTabButton>
