@@ -8,7 +8,7 @@ Ionic & React Components used in this example:
 - [IonBackButton](https://ionicframework.com/docs/api/back-button)
 - [React Router Documentation](https://reacttraining.com/react-router/web/guides/quick-start)
 
-## Whait It Will Look Like
+## What It Will Look Like
 <p align="center">
 <img src="https://raw.githubusercontent.com/aaronksaunders/ionic-react-tabs-tut/master/public/screen-shots/tab-1.png" width="33%">
 <img src="https://raw.githubusercontent.com/aaronksaunders/ionic-react-tabs-tut/master/public/screen-shots/tab1-detail.png" width="33%">
