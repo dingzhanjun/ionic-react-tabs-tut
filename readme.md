@@ -1,4 +1,4 @@
-# Ionic React Tabs: Step By Step
+# Ionic React (Beta) Tabs: Step By Step
 
 Working with the new ionic cli generating an app with tabs and eventually a login page
 
