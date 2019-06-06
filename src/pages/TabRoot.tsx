@@ -26,11 +26,11 @@ const TabRoot: React.FC<IAppProps> = props => {
           <Route path="/" render={() => <Redirect to="/tab1" />} /> 
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="schedule" href="/tab1">
+          <IonTabButton tab="tab1" href="/tab1">
             <IonIcon name="flash" />
             <IonLabel>Tab One</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="speakers" href="/tab2">
+          <IonTabButton tab="tab2" href="/tab2">
             <IonIcon name="apps" />
             <IonLabel>Tab Two</IonLabel>
           </IonTabButton>

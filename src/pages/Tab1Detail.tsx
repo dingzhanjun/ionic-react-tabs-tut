@@ -17,7 +17,7 @@ const Tab1Detail: React.SFC<any> = (props) => {
           <IonButtons slot="start">
             <IonBackButton
               text=""
-              defaultHref="/tab1"
+              defaultHref="tab1"
               onClick={ ()=> props.history.replace("/tab1")}
               goBack={() => {}}
             />
