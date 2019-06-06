@@ -1,23 +1,31 @@
-# mySimpleTabsApp
+# Ionic React Tabs: Step By Step
 
 Working with the new ionic cli generating an app with tabs and a login page
 
 
-##Getting Started
+## Getting Started
 
 use the ionic cli to build your app, make sure you specify react and we are going to use the tab starter as our baseline and then move some things around to get the desired results. 
 
->See blog post for more detailed instructions on getting started
+>See blog post for more detailed instructions on getting started [Blog Post Here](https://ionicframework.com/blog/ionic-cli-v5-brings-react-beta-support/)
 
 Enter into console, and when prompted select `tabs` as the starter template
 ```
 $ ionic start myApp --type=react
 ```
+```
+? Starter template: tabs
+```
+
+### Housecleaning
 So lets clean up some of this and create a more structured starting point.
 
 Create a new file called `TabRoot.tsx` and copy everything from inside of the `IonApp` element in `App.tsx` over to the new component. When you are done, `App.tsx` should look like this
 
 ```tsx
+
+// FILE: App.tsx
+
 const App: React.SFC = () => (
   <Router>
     <Route exact path="/" render={() => <Redirect to="/tab1"/>} />
@@ -31,10 +39,16 @@ const App: React.SFC = () => (
 ```
 Remove this line
 ```tsx
-    <Route exact path="/" render={() => <Redirect to="/tab1"/>} />
+
+// FILE: App.tsx
+
+<Route exact path="/" render={() => <Redirect to="/tab1"/>} />
 ```
 Then add the new default `Route` to point to the `TabRoot` component we just built
 ```tsx
+
+// FILE: App.tsx
+
 const App: React.SFC = () => (
   <Router>
     <div className="App">
@@ -50,6 +64,9 @@ And `TabRoot.tsx` should look like this after pasting the code we cut from `App.
 >Please note I have removed the imports to save space when looking at the code. I also have reduced the number of tabs from three to two, I believe that is sufficcient to make my point.
 
 ```tsx
+
+// FILE: TabRoot.tsx
+
 interface IAppProps {}
 
 const TabRoot: React.FC<IAppProps> = props => {
@@ -77,8 +94,11 @@ const TabRoot: React.FC<IAppProps> = props => {
 
 export default TabRoot;
 ```
-Now the application is set up such that the default route is to render the `TabRoot` component, but we need to tell the component which to render and we want it to be
+Now the application is set up such that the default route is to render the `TabRoot` component, but we need to tell the component which tab to render and we want it to be `Tab1`
 ```html
+
+// FILE: TabRoot.tsx
+
 <IonRouterOutlet>
     <Route path="/:tab(tab1)" component={Tab1} exact={true} />
     <Route path="/:tab(tab2)" component={Tab2} />
