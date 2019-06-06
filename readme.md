@@ -2,6 +2,16 @@
 
 Working with the new ionic cli generating an app with tabs and a login page
 
+## Whait It Will Look Like
+<p align="center">
+<img src="https://raw.githubusercontent.com/aaronksaunders/ionic-react-tabs-tut/master/public/screen-shots/tab-1.png" width="33%">
+<img src="https://raw.githubusercontent.com/aaronksaunders/ionic-react-tabs-tut/master/public/screen-shots/tab1-detail.png" width="33%">
+</p>
+
+<p align="center">
+
+  <img src="https://raw.githubusercontent.com/aaronksaunders/ionic-react-tabs-tut/master/public/screen-shots/tab-2.png" width="33%">
+</div>
 
 ## Getting Started
 
