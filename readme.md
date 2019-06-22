@@ -1,6 +1,6 @@
 # Ionic React (Beta) Tabs: Step By Step
 
-Working with the new ionic cli generating an app with tabs and eventually a login page
+Working with the new ionic cli generating an app with tabs and eventually a login page to demonstration the authentication flow.
 
 Ionic & React Components used in this example:
 
@@ -21,7 +21,7 @@ Ionic & React Components used in this example:
 
 ## Getting Started
 
-use the ionic cli to build your app, make sure you specify react and we are going to use the tab starter as our baseline and then move some things around to get the desired results. 
+Use the [ionic cli](https://ionicframework.com/docs/cli) to build your app, make sure you specify react and for this example we are going to use the tab starter as our baseline. We will then move some things around to get the code structured better for additional enhancements.
 
 >See blog post for more detailed instructions on getting started [Blog Post Here](https://ionicframework.com/blog/ionic-cli-v5-brings-react-beta-support/)
 
