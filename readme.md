@@ -25,7 +25,7 @@ Use the [ionic cli](https://ionicframework.com/docs/cli) to build your app, make
 
 >See blog post for more detailed instructions on getting started [Blog Post Here](https://ionicframework.com/blog/ionic-cli-v5-brings-react-beta-support/)
 
-Enter into console, and when prompted select `tabs` as the starter template
+Enter the command below into a terminal console, and when prompted select `tabs` as the starter template
 ```
 $ ionic start myApp --type=react
 ```
@@ -34,7 +34,7 @@ $ ionic start myApp --type=react
 ```
 
 ### Housecleaning
-So lets clean up some of this and create a more structured starting point.
+So let’s clean up some of these files and create a more structured starting point for our application
 
 Create a new file called `TabRoot.tsx` and copy everything from inside of the `IonApp` element in `App.tsx` over to the new component. When you are done, `App.tsx` should look like this
 
@@ -60,7 +60,7 @@ Remove this line
 
 <Route exact path="/" render={() => <Redirect to="/tab1"/>} />
 ```
-Then add the new default `Route` to point to the `TabRoot` component we just built
+Then add the new default `Route` to point to the `TabRoot` component we just built. This mean that when the application first starts it will go to the `TabRoot` component.
 ```tsx
 
 // FILE: App.tsx
@@ -193,7 +193,7 @@ Add button in the `IonContent` section of `Tab1`; we will use that button to nav
 So a few problems when you make this change in `Tab1.tsx`, the first one is
 >Where is the props.history coming from?
 
-We can use react-router `withRouter` to get the `history` object passed along as a property to the component since the component was being rendered by the `Router`. So lets make the following changes to the files.
+We can use react-router [`withRouter`](https://reacttraining.com/react-router/web/api/withRouter) to get the [`history`](https://reacttraining.com/react-router/web/api/history) object passed along as a property to the component since the component was being rendered by the [`Router`](https://reacttraining.com/react-router/web/api/Router); So lets make the following changes to the files.
 ```tsx
 
 // FILE: Tab1.tsx
