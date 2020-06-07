@@ -1,8 +1,14 @@
+
 Ionic & React Components used in this example:
 
 - [IonTabs Documentation](https://ionicframework.com/docs/api/tabs)
 - [IonBackButton](https://ionicframework.com/docs/api/back-button)
 - [React Router Documentation](https://reacttraining.com/react-router/web/guides/quick-start)
+
+
+#### See YouTube Video with Updated Content
+- https://www.youtube.com/playlist?list=PL2PY2-9rsgl3aYbgV5Y_jFkCH7WWsiP-f
+
 
 ## What It Will Look Like
 
